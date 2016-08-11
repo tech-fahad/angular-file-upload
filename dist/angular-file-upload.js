@@ -1591,7 +1591,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	            if (!this.uploader.isHTML5) this.destroy();
 	            this.uploader.addToQueue(files, options, filters);
-	            if (this.isEmptyAfterSelection()) {
+	            if (this.isEmptyAfterSelection() || (options && options.clearInputAfterAddedToQueue)) {
 	                this.element.prop('value', null);
 	                this.element.replaceWith($compile(this.element.clone())(this.scope)); // IE fix
 	            }
